@@ -83,8 +83,6 @@ public class CameraFollow : MonoBehaviour {
 	}
 
 	void LateUpdate () {
-		if(TestPlayerController.s_instance.lockInput == TestPlayerController.InputLock.Locked)
-			return;
 		if (target) {
 			Vector3 lookPos = target.position;
 

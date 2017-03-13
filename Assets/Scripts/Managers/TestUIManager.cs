@@ -42,26 +42,26 @@ public class TestUIManager : MonoBehaviour {
 		if(State == UIState.Menu) {
 			state = lastState;
 			menu.SetActive(false);
-			TestPlayerController.s_instance.lockInput = TestPlayerController.InputLock.Unlocked;
+//			TestPlayerController.s_instance.lockInput = TestPlayerController.InputLock.Unlocked;
 		} else {
 			state = UIState.Menu;
 			menu.SetActive(true);
-			TestPlayerController.s_instance.lockInput = TestPlayerController.InputLock.Locked;
+//			TestPlayerController.s_instance.lockInput = TestPlayerController.InputLock.Locked;
 		}
 	}
 
 	void HandleCursorLock() {
-		switch(TestPlayerController.s_instance.lockInput) {
-			case TestPlayerController.InputLock.CameraOnly:
-			case TestPlayerController.InputLock.Locked:
-				Cursor.lockState = CursorLockMode.Confined;
-				break;
-			case TestPlayerController.InputLock.Unlocked:
-				Cursor.lockState = CursorLockMode.Locked;
-				break;
-			default:
-				break;
-		}
+//		switch(TestPlayerController.s_instance.lockInput) {
+//			case TestPlayerController.InputLock.CameraOnly:
+//			case TestPlayerController.InputLock.Locked:
+//				Cursor.lockState = CursorLockMode.Confined;
+//				break;
+//			case TestPlayerController.InputLock.Unlocked:
+//				Cursor.lockState = CursorLockMode.Locked;
+//				break;
+//			default:
+//				break;
+//		}
 	}
 
 	public void SetState(UIState state) {
