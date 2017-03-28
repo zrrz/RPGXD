@@ -22,6 +22,7 @@ public class NPInputManager : MonoBehaviour {
 		public PlayerAction LookRight;
 		public PlayerTwoAxisAction Look;
 		public PlayerAction Menu;
+		public PlayerAction Roll;
 
 		public PlayerActions() {
 			Fire = CreatePlayerAction( "Fire" );
@@ -39,16 +40,17 @@ public class NPInputManager : MonoBehaviour {
 			Move = CreateTwoAxisPlayerAction( Left, Right, Down, Up );
 			Look = CreateTwoAxisPlayerAction( LookLeft, LookRight, LookDown, LookUp );
 			Menu = CreatePlayerAction( "Menu" );
+			Roll = CreatePlayerAction( "Roll" );
 		}
 
 		public static PlayerActions CreateWithDefaultBindings() {
 			var playerActions = new PlayerActions();
 
-			playerActions.Fire.AddDefaultBinding( InputControlType.RightTrigger );
-			playerActions.Fire.AddDefaultBinding( Mouse.LeftButton );
+			playerActions.Fire.AddDefaultBinding( Key.F );
+			playerActions.Fire.AddDefaultBinding( InputControlType.Action2 );
 
-			playerActions.Melee.AddDefaultBinding( Key.F );
-			playerActions.Melee.AddDefaultBinding( InputControlType.Action2 );
+			playerActions.Melee.AddDefaultBinding( InputControlType.RightTrigger );
+			playerActions.Melee.AddDefaultBinding( Mouse.LeftButton );
 
 			playerActions.Aim.AddDefaultBinding( Mouse.RightButton );
 			playerActions.Aim.AddDefaultBinding( InputControlType.LeftTrigger );
@@ -83,6 +85,9 @@ public class NPInputManager : MonoBehaviour {
 
 			playerActions.Menu.AddDefaultBinding( Key.Escape );
 			playerActions.Menu.AddDefaultBinding( InputControlType.Pause );
+
+			playerActions.Roll.AddDefaultBinding( Key.Z );
+			playerActions.Roll.AddDefaultBinding( InputControlType.LeftTrigger );
 
 			playerActions.ListenOptions.IncludeUnknownControllers = true;
 			playerActions.ListenOptions.MaxAllowedBindings = 3;

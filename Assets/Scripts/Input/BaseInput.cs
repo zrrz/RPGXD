@@ -8,7 +8,7 @@ public class BaseInput : MonoBehaviour {
 	public bool sprint;
 //	public bool jump;
 //	public bool grapple;
-	public bool aim;
+//	public bool aim;
 	public bool shoot;
 	public bool melee;
 
